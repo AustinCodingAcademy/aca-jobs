@@ -25,12 +25,23 @@ $(function() {
       },
       success: function(res) {
         var $themeShowcase = $('.theme-showcase');
-        for (var idx in res.jobs) {
-          var item = '<a class="list-group-item" href="' + res.jobs[idx].url  + '" target="_blank">';
+        var prices = { 'low': 0, 'medium': 1, 'high': 3 };
+        // function compare(a, b) {
+        //   if (prices[a.price] > prices[b.price]) {
+        //     return -1;
+        //   }
+        //   if (prices[a.price] < prices[b.price]) {
+        //     return 1;
+        //   }
+        //   // a must be equal to b
+        //   return 0;
+        // }
+        for (var idx in res.jobs.sort()) {
+          var item = '<a class="list-group-item" data-toggle="modal" data-target="#myModal" data-idx="' + idx + '">';
           item +='<h4><div class="row"><div class="col-sm-9"><span class="job-title">' + res.jobs[idx].title + '</span>&nbsp;';
           item +='<span class="job-company">' + res.jobs[idx].company + '</span></div>';
           item +='<div class="col-sm-3"><span class="label label-default pull-right">' + moment.utc(res.jobs[idx].date).format('DD MMM YYYY') + '</span>';
-          item +='<span class="label label-info pull-right">' + res.jobs[idx].city[0] + '</span></div></div></h4></a>';
+          item +='<span class="label label-info pull-right">' + res.jobs[idx].city[0].split(',').join(', ') + '</span></div></div></h4></a>';
           $item = $(item);
           if (!category && !city) {
             var industry = res.jobs[idx].industry0.toLowerCase().split(' / ').join('-');
@@ -44,6 +55,14 @@ $(function() {
           } else {
             $('.list-group').append($item);
           }
+          $item.click(function(e) {
+            $('.modal-title').html(res.jobs[$(this).data('idx')].title + '<br />');
+            $('.modal-title').append('<small>' + res.jobs[$(this).data('idx')].company + '</small>');
+            $('.modal-body').html(res.jobs[$(this).data('idx')].description + '<br /><br />');
+            $('.modal-body').append('<a data-toggle="tooltip" data-placement="bottom" title="These descriptions are generated to help speed up your job searching! Click Apply to see original posting.">Why the bad formatting?</a>');
+            $('#job-apply').attr('href', res.jobs[$(this).data('idx')].url);
+            $('[data-toggle="tooltip"]').tooltip();
+          });
         }
       }
     });

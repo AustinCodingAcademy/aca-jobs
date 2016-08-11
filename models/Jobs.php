@@ -161,6 +161,9 @@ class Jobs
                     " status=:status AND category=:category ORDER BY created DESC",
                     array(':status'=>$status, ':category'=>$category));
         // }
+        foreach ($jobs as $job) {
+          $job->cityName = $this->getJobCity($job->city);
+        }
         return $jobs;
     }
 

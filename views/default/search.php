@@ -1,7 +1,6 @@
 <?php include 'header.php'; ?>
 <?php include 'search-form.php'; ?>
 
-<h4><?php _e($count); ?> <?php echo $lang->t('search|jobs_found'); ?> "<?php _e($terms); ?>"</h4>
 <?php foreach($categories as $category): ?>
 <h3><?php _e($category->name); ?> <?php echo $lang->t('jobs|jobs'); ?></h3>
 <div class="list-group">
@@ -12,9 +11,10 @@ foreach($jobs[$category->id] as $job): ?>
         <span class="job-title"><?php _e($job->title); ?></span>&nbsp;
         <span class="job-company"><?php _e($job->company_name); ?></span>
         <span class="label label-default pull-right"><?php niceDate($job->created); ?></span>
+        <span class="label label-default pull-right label-info"><?php _e($job->cityName); ?></span>
     </h4>
     </a>
-<?php endforeach; 
+<?php endforeach;
 endif; ?>
     <a class="list-group-item" href="<?php _e(BASE_URL ."categories/{$category->id}/{$category->url}"); ?>">
         <h5><?php echo $lang->t('jobs|view_all', $category->name); ?></h5>

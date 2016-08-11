@@ -11,7 +11,7 @@ $app->get('/jobs2careers', function() use ($app) {
   . '&limit=' . $app->request->params("limit")
   . '&sort=' . $app->request->params("sort")
   . '&start=' . $app->request->params("start")
-  . '&format=json&link=1';
+  . '&format=json&link=1&full_desc=1';
   $app->response->write(file_get_contents($url));
   return $app->response;
 });

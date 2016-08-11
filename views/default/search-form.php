@@ -7,7 +7,7 @@
         <input type="text" class="form-control input-lg" name="terms" placeholder="<?php echo $lang->t('search|search_for'); ?>">
       </div>
       <div class="col-md-2">
-        <input type="submit" class="btn btn-lg btn-block"/>
+        <input type="submit" value="SUBMIT" class="btn btn-lg btn-block btn-default"/>
       </div>
       <div class="col-md-4">
         <a type="button" class="btn btn-info btn-lg btn-block" href="<?php _e(BASE_URL); ?>jobs/new" <?php if (ALLOW_JOB_POST == INACTIVE) { echo 'disabled'; } ?>>

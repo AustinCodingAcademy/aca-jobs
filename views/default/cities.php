@@ -10,6 +10,7 @@
         <span class="job-title"><?php _e($job->title); ?></span>&nbsp;
         <span class="job-company"><?php _e($job->company_name); ?></span>
         <span class="label label-default pull-right"><?php niceDate($job->created); ?></span>
+        <span class="label label-default pull-right label-info"><?php _e($job->cityName); ?></span>
     </h4>
     </a>
 <?php endforeach; ?>
