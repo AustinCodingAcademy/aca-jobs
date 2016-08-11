@@ -1,4 +1,3 @@
-<script type="text/javascript" src="http://api.Jobs2Careers.com/api/j2c.js"></script>
 <script type="text/javascript">
 $(function() {
   var parser = document.createElement('a');
@@ -27,7 +26,7 @@ $(function() {
       success: function(res) {
         var $themeShowcase = $('.theme-showcase');
         for (var idx in res.jobs) {
-          var item = '<a class="list-group-item" href="#" onclick="' + res.jobs[idx].onclick + '">';
+          var item = '<a class="list-group-item" href="' + res.jobs[idx].url  + '" target="_blank">';
           item +='<h4><div class="row"><div class="col-sm-9"><span class="job-title">' + res.jobs[idx].title + '</span>&nbsp;';
           item +='<span class="job-company">' + res.jobs[idx].company + '</span></div>';
           item +='<div class="col-sm-3"><span class="label label-default pull-right">' + moment.utc(res.jobs[idx].date).format('DD MMM YYYY') + '</span>';
@@ -45,9 +44,6 @@ $(function() {
           } else {
             $('.list-group').append($item);
           }
-          $item.click(function(e) {
-            e.preventDefault();
-          });
         }
       }
     });
