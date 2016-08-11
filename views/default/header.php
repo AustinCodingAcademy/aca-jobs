@@ -57,7 +57,7 @@
             </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $lang->t('link|cities'); ?> <b class="caret"></b></a>
-              <ul class="dropdown-menu">
+              <ul class="dropdown-menu" id="cities">
                 <?php foreach($cities as $cit): ?>
                 <li><a href="<?php _e(BASE_URL . "cities/{$cit->id}/{$cit->url}"); ?>"><?php _e($cit->name); ?></a></li>
                 <?php endforeach; ?>

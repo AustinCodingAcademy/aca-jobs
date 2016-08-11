@@ -109,6 +109,8 @@ define('BUCKET_URL', getenv('BUCKET_URL'));
 define('S3_BUCKET_NAME', getenv('S3_BUCKET_NAME'));
 define('S3_REGION', getenv('S3_REGION'));
 define('LOGIN_URL', ADMIN_URL . 'login');
+define('J2C_ID', getenv('J2C_ID'));
+define('J2C_PASS', getenv('J2C_PASS'));
 
 // MVC PATHS
 define('MODEL_PATH', 'models/');
