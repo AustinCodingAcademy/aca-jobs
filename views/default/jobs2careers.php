@@ -33,7 +33,7 @@ $(function() {
           item +='<div class="col-sm-3"><span class="label label-default pull-right">' + moment.utc(res.jobs[idx].date).format('DD MMM YYYY') + '</span>';
           item +='<span class="label label-info pull-right">' + res.jobs[idx].city[0] + '</span></div></div></h4></a>';
           $item = $(item);
-          if (!category) {
+          if (!category && !city) {
             var industry = res.jobs[idx].industry0.toLowerCase().split(' / ').join('-');
             if ($themeShowcase.find('h3:contains(' + res.jobs[idx].industry0 + ')').length < 1) {
               $('<h3>' + res.jobs[idx].industry0 + '</h3>').insertBefore('#footer');
