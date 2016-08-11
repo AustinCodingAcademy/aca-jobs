@@ -1,32 +1,32 @@
 <?php
 /**
- * Jobskee - open source job board 
+ * Jobskee - open source job board
  *
  * @author      Elinore Tenorio <elinore.tenorio@gmail.com>
  * @license     MIT
  * @url         http://www.jobskee.com
- * 
+ *
  * Jobs class handles all operations related to jobs
  */
 
-class Jobs 
+class Jobs
 {
-    
+
     private $_id;
     private $_job;
-    
-    public function __construct($id=0) 
+
+    public function __construct($id=0)
     {
         $this->_id = $id;
         $this->_job = R::load('jobs', $id);
     }
-    
+
     public function countJobApplications()
     {
         $count = R::count('applications',' job_id=:job_id ', array(':job_id'=>$this->_id));
         return $count;
     }
-    
+
     public function getJobFromToken($token)
     {
         $job = R::findOne('jobs', ' id=:id AND token=:token ', array(':id'=>$this->_id, ':token'=>$token));
@@ -35,13 +35,13 @@ class Jobs
         }
         return false;
     }
-    
+
     public function getJobCity($city_id)
     {
         $city = R::load('cities', $city_id);
         return $city->name;
     }
-    
+
     public function getJobCategory($category_id)
     {
         $category = R::load('categories', $category_id);
@@ -67,7 +67,7 @@ class Jobs
             $job->token = $data['token'];
             $job->status = $status;
         }
-        
+
         $job->title = $data['title'];
         $job->category = $data['category'];
         $job->city = $data['city'];
@@ -79,9 +79,9 @@ class Jobs
         $job->url = $data['url'];
         $job->is_featured = $data['is_featured'];
         $id = R::store($job);
-        
+
         $data['access'] = accessToken($id);
-        
+
         // send user an email if job is inactive
         if (!$job->status && $data['step'] == 3) {
             $notif = new Notifications();
@@ -89,17 +89,17 @@ class Jobs
                 return true;
             }
         }
-        
+
         if ($id > 0) {
             return $id;
-        } 
+        }
         return false;
     }
-    
-    public function featureJob($token, $action='on') 
+
+    public function featureJob($token, $action='on')
     {
         $job = $this->getJobFromToken($token);
-        
+
         if ($job && $job->id) {
             $action = ($action == 'on') ? ACTIVE : INACTIVE;
             $job->is_featured = $action;
@@ -108,8 +108,8 @@ class Jobs
         }
         return false;
     }
-    
-    public function deleteJob($token) 
+
+    public function deleteJob($token)
     {
         $job = $this->getJobFromToken($token);
         if ($job && ($job->id)) {
@@ -118,8 +118,8 @@ class Jobs
         }
         return false;
     }
-    
-    public function expireJobs() 
+
+    public function expireJobs()
     {
         $sql = "UPDATE jobs SET status = 0 WHERE created < (NOW() - INTERVAL ". EXPIRE_JOBS ." DAY)";
         if (R::exec($sql)) {
@@ -127,8 +127,8 @@ class Jobs
         }
         return false;
     }
-    
-    public function activateJob($token) 
+
+    public function activateJob($token)
     {
         $job = $this->showJobDetails();
         if ($token == accessToken($job->id)) {
@@ -138,8 +138,8 @@ class Jobs
         }
         return false;
     }
-    
-    public function deactivateJob($token) 
+
+    public function deactivateJob($token)
     {
         $job = $this->showJobDetails();
         if ($token == accessToken($job->id)) {
@@ -149,39 +149,39 @@ class Jobs
         }
         return false;
     }
-    
+
     public function getJobs($status=1, $category=1, $start=null, $limit=null)
     {
-        if (!is_null($start) && !is_null($limit)) {
-            $jobs = R::findAll('jobs', 
-                    " status=:status AND category=:category ORDER BY created DESC LIMIT :start, :limit", 
-                    array(':status'=>$status, ':category'=>$category, ':start'=>$start, ':limit'=>$limit));
-        } else {
-            $jobs = R::findAll('jobs', 
-                    " status=:status AND category=:category ORDER BY created DESC", 
+        // if (!is_null($start) && !is_null($limit)) {
+        //     $jobs = R::findAll('jobs',
+        //             " status=:status AND category=:category ORDER BY created DESC LIMIT :start, :limit",
+        //             array(':status'=>$status, ':category'=>$category, ':start'=>$start, ':limit'=>$limit));
+        // } else {
+            $jobs = R::findAll('jobs',
+                    " status=:status AND category=:category ORDER BY created DESC",
                     array(':status'=>$status, ':category'=>$category));
-        }
+        // }
         return $jobs;
     }
-    
+
     public function getStatus()
     {
         $job = $this->showJobDetails();
         return $job->status;
     }
-    
+
     public function getSlugTitle()
     {
         global $lang;
         $job = $this->showJobDetails();
         return slugify($job->title ." {$lang->t('jobs|at')} ". $job->company_name);
     }
-    
-    public function getSeoTitle() 
+
+    public function getSeoTitle()
     {
         global $lang;
         $job = $this->showJobDetails();
         return $job->title ." {$lang->t('jobs|at')} ". $job->company_name;
     }
-    
+
 }
