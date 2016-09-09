@@ -20,7 +20,7 @@ endif; ?>
         <h5><?php echo $lang->t('jobs|view_all', $category->name); ?></h5>
     </a>
 </div>
-<div class="pull-right"><a href="#top"><?php echo $lang->t('jobs|back_to_top'); ?></a></div>
+<p class="pull-right"><a href="#top"><?php echo $lang->t('jobs|back_to_top'); ?></a></p>
 <?php endforeach; ?>
 
 <?php include 'footer.php'; ?>

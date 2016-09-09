@@ -18,7 +18,7 @@
           <div class="modal-body"></div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <a id="job-apply" class="btn btn-primary" target="_blank">Apply</a>
+            <a id="job-apply" class="btn btn-primary" target="_blank">Original Posting</a>
           </div>
         </div>
       </div>
@@ -64,6 +64,7 @@
     <?php endif; ?>
     <? if(!array_intersect(explode('/', "$_SERVER[REQUEST_URI]"), ['jobs', 'admin', '5-jobs', 'giving-back'])): ?>
       <?php include 'jobs2careers.php'; ?>
+      <?php include 'facebook.php'; ?>
     <?php endif; ?>
   </body>
 </html>

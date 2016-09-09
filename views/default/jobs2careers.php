@@ -26,6 +26,8 @@ $(function() {
       success: function(res) {
         var $themeShowcase = $('.theme-showcase');
         var prices = { 'low': 0, 'medium': 1, 'high': 3 };
+        // We are paid more for click throughs to "higher priced" listings, but
+        // the results aren't as good. So we are just going to order by most relevant
         // function compare(a, b) {
         //   if (prices[a.price] > prices[b.price]) {
         //     return -1;
@@ -37,18 +39,19 @@ $(function() {
         //   return 0;
         // }
         for (var idx in res.jobs.sort()) {
-          var item = '<a class="list-group-item" data-toggle="modal" data-target="#myModal" data-idx="' + idx + '">';
+          var item = '<a class="list-group-item jobs2careers" data-toggle="modal" data-target="#myModal" data-idx="' + idx + '">';
           item +='<h4><div class="row"><div class="col-sm-9"><span class="job-title">' + res.jobs[idx].title + '</span>&nbsp;';
           item +='<span class="job-company">' + res.jobs[idx].company + '</span></div>';
-          item +='<div class="col-sm-3"><span class="label label-default pull-right">' + moment.utc(res.jobs[idx].date).format('DD MMM YYYY') + '</span>';
+          item +='<div class="col-sm-3"><span class="label label-primary pull-right">Jobs2Careers</span>';
+          item += '<span class="label label-default pull-right">' + moment.utc(res.jobs[idx].date).format('DD MMM YYYY') + '</span>';
           item +='<span class="label label-info pull-right">' + res.jobs[idx].city[0].split(',').join(', ') + '</span></div></div></h4></a>';
           $item = $(item);
           if (!category && !city) {
             var industry = res.jobs[idx].industry0.toLowerCase().split(' / ').join('-');
             if ($themeShowcase.find('h3:contains(' + res.jobs[idx].industry0 + ')').length < 1) {
               $('<h3>' + res.jobs[idx].industry0 + '</h3>').insertBefore('#footer');
-              $('<div class="list-group" id="' + industry + '"></div>').insertBefore('#footer');
-              $('<p class="pull-right"><a href="#top">^ back to top</a></p>').insertBefore('#footer');
+              $('<div class="list-group jobs2careers" id="' + industry + '"></div>').insertBefore('#footer');
+              $('<p class="pull-right jobs2careers"><a href="#top">^ back to top</a></p>').insertBefore('#footer');
               $('<a name="' + industry + '"></a>').insertBefore('#footer');
             }
             $('#' + industry).append($item);
@@ -59,7 +62,7 @@ $(function() {
             $('.modal-title').html(res.jobs[$(this).data('idx')].title + '<br />');
             $('.modal-title').append('<small>' + res.jobs[$(this).data('idx')].company + '</small>');
             $('.modal-body').html(res.jobs[$(this).data('idx')].description + '<br /><br />');
-            $('.modal-body').append('<a data-toggle="tooltip" data-placement="bottom" title="These descriptions are generated to help speed up your job searching! Click Apply to see original posting.">Why the bad formatting?</a>');
+            $('.modal-body').append('<a data-toggle="tooltip" data-placement="bottom" title="These descriptions are generated to help speed up your job searching! See Original Posting for instructions to apply.">Why the bad formatting?</a>');
             $('#job-apply').attr('href', res.jobs[$(this).data('idx')].url);
             $('[data-toggle="tooltip"]').tooltip();
           });

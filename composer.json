@@ -1,11 +1,11 @@
 {
-    "name": "elinoretenorio/jobskee-open-source-job-board",
+    "name": "AustinCodingAcademy/jobskee-open-source-job-board",
     "description": "A simple open source job board for everyone.",
     "license": "MIT",
     "authors": [
         {
-            "name": "Elinore Tenorio",
-            "email": "elinore.tenorio@gmail.com"
+            "name": "Kevin Colten",
+            "email": "kevin@austincodingacademy.com"
         }
     ],
     "require": {
@@ -13,6 +13,7 @@
         "slim/extras": "^2.0",
         "vlucas/phpdotenv": "^2.3",
         "ext-gd": "*",
-        "aws/aws-sdk-php": "^3.18"
+        "aws/aws-sdk-php": "^3.18",
+        "facebook/graph-sdk": "^5.3"
     }
 }

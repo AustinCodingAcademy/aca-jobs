@@ -111,6 +111,8 @@ define('S3_REGION', getenv('S3_REGION'));
 define('LOGIN_URL', ADMIN_URL . 'login');
 define('J2C_ID', getenv('J2C_ID'));
 define('J2C_PASS', getenv('J2C_PASS'));
+define('FB_APP_ID', getenv('FB_APP_ID'));
+define('FB_APP_SECRET', getenv('FB_APP_SECRET'));
 
 // MVC PATHS
 define('MODEL_PATH', 'models/');
