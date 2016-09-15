@@ -28,7 +28,7 @@
     <link rel="shortlink" href="<?php _e($seo_url); ?>" />
 
     <?php if (isset($markdown)): ?>
-        <link href="<?php _e(ASSET_URL); ?>bootstrap-markdown/css/bootstrap-markdown.min.css" rel="stylesheet">
+        <link href="<?php _e(BASE_URL); ?>vendor/npm-asset/bootstrap-markdown/css/bootstrap-markdown.min.css" rel="stylesheet">
     <?php endif; ?>
   </head>
   <body>

@@ -14,6 +14,8 @@
         "vlucas/phpdotenv": "^2.3",
         "ext-gd": "*",
         "aws/aws-sdk-php": "^3.18",
-        "facebook/graph-sdk": "^5.3"
+        "facebook/graph-sdk": "^5.3",
+        "npm-asset/bootstrap-markdown": "2.10.0",
+        "npm-asset/to-markdown": "3.0.1"
     }
 }
