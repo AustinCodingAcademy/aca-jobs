@@ -8,8 +8,8 @@
     <!-- Bootstrap -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="<?php _e(BASE_URL); ?>vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?php _e(BASE_URL); ?>vendor/twbs/bootstrap/dist/css//bootstrap-theme.min.css" rel="stylesheet">
+    <link href="<?php _e(PACKAGE_URL); ?>twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php _e(PACKAGE_URL); ?>twbs/bootstrap/dist/css//bootstrap-theme.min.css" rel="stylesheet">
     <link href="<?php _e(ADMIN_ASSETS); ?>css/theme.css" rel="stylesheet">
     <link rel="shortcut icon" href="<?php _e(ADMIN_ASSETS);; ?>ico/favicon.png">
 
@@ -21,7 +21,7 @@
     <![endif]-->
     
     <?php if (isset($markdown)): ?>
-        <link href="<?php _e(BASE_URL); ?>vendor/npm-asset/bootstrap-markdown/css/bootstrap-markdown.min.css" rel="stylesheet">
+        <link href="<?php _e(PACKAGE_URL); ?>npm-asset/bootstrap-markdown/css/bootstrap-markdown.min.css" rel="stylesheet">
     <?php endif; ?>
         
   </head>
