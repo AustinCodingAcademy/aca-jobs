@@ -8,6 +8,10 @@
             "email": "kevin@austincodingacademy.com"
         }
     ],
+    "scripts": {
+      "preinstall": "composer global require fxp/composer-asset-plugin:~1.2",
+      "preupdate": "composer run-script preinstall"
+    },
     "require": {
         "slim/slim": "2.*",
         "slim/extras": "^2.0",
