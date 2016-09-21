@@ -31,8 +31,10 @@ Installation
 4. Copy `.env.example` to `.env` and fill out variables
 5. Change file permission of /assets/images and /assets/attachments to 777
 6. Check that all .htaccess files were uploaded
-7. Install dependencies with [Composer](https://getcomposer.org/) `composer update`
-8. Run `php -S localhost:8080`
+7. Install php dependencies with [Composer](https://getcomposer.org/) `composer update`
+8. Install js/css dependencies with [Node](https://nodejs.org/en/) `npm install`
+  * To run your js/css build in development run `npm run gulp develop`, or just `npm run gulp` to have it watch for changes and rebuild
+9. Run `php -S localhost:8080`
 
 Default admin login info:
 Email: admin@example.com
