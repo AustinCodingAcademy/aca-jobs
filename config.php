@@ -103,6 +103,7 @@ define('CSV_FIELDS', 10);
 
 // CORE APPLICATION URLS
 define('ASSET_URL', BASE_URL . 'assets/');
+define('PACKAGE_URL', BASE_URL . 'vendor/');
 define('ATTACHMENT_PATH', '');
 define('IMAGE_PATH', '');
 define('BUCKET_URL', getenv('BUCKET_URL'));
