@@ -46,7 +46,7 @@ gulp.task('sass', function () {
       browsers: ['> 5%', 'last 2 versions']
     }))
     .pipe(cssnano())
-    .pipe(gulp.dest('views/assets/'));
+    .pipe(gulp.dest('views/assets/css/'));
 });
 
 gulp.task('sass-dev', function () {
