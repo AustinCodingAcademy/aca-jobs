@@ -5,28 +5,30 @@
  * @author      Elinore Tenorio <elinore.tenorio@gmail.com>
  * @license     MIT
  * @url         http://www.jobskee.com
- * 
+ *
  * Application class handles job application sent through Jobskee
  */
+
+use RedBean_Facade as R;
 
 class Applications
 {
     private $_job_id;
-    
-    public function __construct($job_id=null) 
+
+    public function __construct($job_id=null)
     {
         if (isset($job_id)) {
             $this->_job_id = $job_id;
         }
     }
-    
-    public function getJobTitle() 
+
+    public function getJobTitle()
     {
         $job = R::load('jobs', $this->_job_id);
         return $job->title;
     }
-    
-    public function getJobTitleURL() 
+
+    public function getJobTitleURL()
     {
         global $lang;
         $job = R::load('jobs', $this->_job_id);
@@ -35,7 +37,7 @@ class Applications
     }
 
     public function applyForJob($data) {
-        
+
         $apply = R::dispense('applications');
         $apply->job_id = $this->_job_id;
         $apply->cover_letter = $data['cover_letter'];
@@ -47,27 +49,27 @@ class Applications
         $apply->token = $data['token'];
         $apply->created = R::isoDateTime();
         $id = R::store($apply);
-        
+
         $job = R::load('jobs', $this->_job_id);
-        
+
         $data['title'] = $job->title;
         $data['recipient'] = $job->email;
-        
+
         $notif = new Notifications();
         if ($notif->applyForJobMail($data)) {
             return $id;
         }
         return false;
-        
-        
+
+
     }
-    
+
     public function countJobApplications()
     {
         $count = R::count('applications',' job_id=:job_id ', array(':job_id'=>$this->job_id));
         return $count;
     }
-    
+
     public function getApplications($start)
     {
         if (isset($this->_job_id)) {
@@ -77,7 +79,7 @@ class Applications
         }
         return $apps;
     }
-    
+
     public function countApplications()
     {
         if (isset($this->_job_id)) {

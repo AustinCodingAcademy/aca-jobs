@@ -1,0 +1,19 @@
+@import "node_modules/bootstrap-sass/assets/stylesheets/_bootstrap-sprockets";
+@import "node_modules/bootstrap-sass/assets/stylesheets/_bootstrap";
+@import "node_modules/bootstrap-markdown/css/bootstrap-markdown.min";
+@import "./pygments-manni";
+
+body {
+  padding-top: 70px;
+  padding-bottom: 30px;
+}
+
+.theme-dropdown .dropdown-menu {
+  display: block;
+  position: static;
+  margin-bottom: 20px;
+}
+
+.theme-showcase > p > .btn {
+  margin: 5px 0;
+}

@@ -1,10 +1,10 @@
 {
-  "name": "jobskee-open-source-job-board",
+  "name": "Austin Coding Academy Jobs Board",
   "version": "1.0.0",
-  "description": "A simple open source job board for everyone.",
+  "description": "A jobs board for ACA students.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "gulp build",
+    "postinstall": "npm rebuild && gulp build",
     "gulp": "gulp"
   },
   "repository": {
@@ -14,6 +14,8 @@
   "author": "Kevin Colten",
   "license": "MIT",
   "dependencies": {
+    "bootstrap-filestyle": "^1.2.1",
+    "bootstrap-markdown": "^2.10.0",
     "bootstrap-sass": "^3.3.7",
     "browserify": "^13.1.0",
     "gulp": "^3.9.1",
@@ -23,9 +25,15 @@
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^2.0.0",
+    "holderjs": "^2.9.4",
     "jquery": "^3.1.0",
+    "markdown": "^0.5.0",
     "pixrem": "^3.0.2",
+    "to-markdown": "^3.0.1",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
+  },
+  "browser": {
+    "bootstrap-markdown": "./node_modules/bootstrap-markdown/js/bootstrap-markdown.js"
   }
 }

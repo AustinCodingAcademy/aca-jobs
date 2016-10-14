@@ -9,6 +9,8 @@
  * Jobs class handles all operations related to jobs
  */
 
+use RedBean_Facade as R;
+
 class Jobs
 {
 

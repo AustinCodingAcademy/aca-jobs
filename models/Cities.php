@@ -1,48 +1,50 @@
 <?php
 /**
- * Jobskee - open source job board 
+ * Jobskee - open source job board
  *
  * @author      Elinore Tenorio <elinore.tenorio@gmail.com>
  * @license     MIT
  * @url         http://www.jobskee.com
- * 
+ *
  * Cities class handles city display and management
  */
 
+use RedBean_Facade as R;
+
 class Cities {
-    
+
     private $_id;
-    
-    public function __construct($id) 
+
+    public function __construct($id)
     {
         $this->_id = $id;
     }
-    
-    public function findCity() 
+
+    public function findCity()
     {
         $city = R::findOne('cities', ' id=:id ', array(':id'=>$this->_id));
         return $city;
     }
-    
-    public function findCityJobs($start, $limit) 
+
+    public function findCityJobs($start, $limit)
     {
-        $jobs = R::findAll('jobs', " status=1 AND city=:city ORDER BY created DESC LIMIT :start, :limit ", 
+        $jobs = R::findAll('jobs', " status=1 AND city=:city ORDER BY created DESC LIMIT :start, :limit ",
                             array(':city'=>$this->_id, ':start'=>$start, ':limit'=>$limit));
         return $jobs;
     }
 
-    public function findAllCityJobs() 
+    public function findAllCityJobs()
     {
-        $jobs = R::findAll('jobs', " status=1 AND city=:city ORDER BY created DESC LIMIT 0, 100", 
+        $jobs = R::findAll('jobs', " status=1 AND city=:city ORDER BY created DESC LIMIT 0, 100",
                             array(':city'=>$this->_id));
         return $jobs;
     }
-    
+
     public function countCityJobs() {
         $count = R::count('jobs', " status=1 AND city=:city ", array(':city'=>$this->_id));
         return $count;
     }
-    
+
     public function addCity($data)
     {
         if (isset($data['id']) && $data['id'] > 0) {
@@ -57,7 +59,7 @@ class Cities {
         $id = R::store($city);
         return $id;
     }
-    
+
     public function deleteCity()
     {
         $count = R::count('jobs', " city=:city ", array(':city'=>$this->_id));
@@ -68,11 +70,11 @@ class Cities {
         }
         return false;
     }
-    
-    public static function findCities() 
+
+    public static function findCities()
     {
         $cities = R::findAll('cities', ' ORDER BY sort ASC ');
         return $cities;
     }
-    
+
 }

@@ -9,6 +9,8 @@
  * Notifications class handles all outgoing notifications from Jobskee
  */
 
+use RedBean_Facade as R;
+
 class Notifications {
 
     protected $app_name;

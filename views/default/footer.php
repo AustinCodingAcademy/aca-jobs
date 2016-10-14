@@ -24,29 +24,13 @@
       </div>
     </div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="<?php _e(PACKAGE_URL); ?>components/jquery/jquery.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js"></script>
-
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="<?php _e(PACKAGE_URL); ?>twbs/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="<?php _e(PACKAGE_URL); ?>imsky/holder/holder.js"></script>
-
+    <script src="/assets/bundle.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
-
-    <?php if (isset($filestyle)): ?>
-        <script src="<?php _e(PACKAGE_URL); ?>grimmlink/bootstrap-filestyle/bootstrap-filestyle.min.js"></script>
-    <?php endif; ?>
-    <?php if (isset($markdown)): ?>
-        <script src="<?php _e(PACKAGE_URL); ?>npm-asset/markdown/lib/markdown.js"></script>
-        <script src="<?php _e(PACKAGE_URL); ?>npm-asset/to-markdown/dist/to-markdown.js"></script>
-        <script src="<?php _e(PACKAGE_URL); ?>npm-asset/bootstrap-markdown/js/bootstrap-markdown.js"></script>
-    <?php endif; ?>
 
     <?php if (GA_TRACKING != ''): ?>
     <script type="text/javascript">

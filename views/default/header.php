@@ -10,10 +10,8 @@
     <!-- Bootstrap -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="<?php _e(PACKAGE_URL); ?>twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?php _e(PACKAGE_URL); ?>twbs/bootstrap/dist/css//bootstrap-theme.min.css" rel="stylesheet">
-    <link href="<?php _e(THEME_ASSETS); ?>css/theme.css" rel="stylesheet">
-    <link rel="shortcut icon" href="<?php _e(THEME_ASSETS);; ?>ico/favicon.png">
+    <link href="/assets/app.css" rel="stylesheet">
+    <link rel="shortcut icon" href="/assets/ico/favicon.png">
 
     <!-- Open Graph -->
     <meta property="og:title" content="<?php _e($seo_title); ?>" />
@@ -26,10 +24,6 @@
 
     <link rel="canonical" href="<?php _e($seo_url); ?>" />
     <link rel="shortlink" href="<?php _e($seo_url); ?>" />
-
-    <?php if (isset($markdown)): ?>
-        <link href="<?php _e(PACKAGE_URL); ?>npm-asset/bootstrap-markdown/css/bootstrap-markdown.min.css" rel="stylesheet">
-    <?php endif; ?>
   </head>
   <body>
     <!-- Fixed navbar -->

@@ -1,9 +1,8 @@
 .DS_Store
 *.patch
-
 vendor
 .env
 components
 node_modules
-views/assets/bundle.js*
-views/assets/app.css*
+assets/css/app.css*
+assets/js/bundle.js*
