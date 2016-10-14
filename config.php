@@ -6,6 +6,7 @@
  * @license     MIT
  * @url         http://www.jobskee.com
  */
+require 'vendor/autoload.php';
 
 if (getenv('APP_MODE') != 'production') {
   $dotenv = new Dotenv\Dotenv(__DIR__);
@@ -28,7 +29,7 @@ setlocale(LC_ALL, 'en_EN');
 include 'models/helpers.php';
 include 'models/class.phpmailer.php';
 include 'models/class.smtp.php';
-include 'models/rb.php';
+use RedBean_Facade as R;
 spl_autoload_register(function ($class) {
 	if (file_exists("models/{$class}.php")) { include "models/{$class}.php"; }
 });
@@ -102,8 +103,6 @@ define('INACTIVE', 0);
 define('CSV_FIELDS', 10);
 
 // CORE APPLICATION URLS
-define('ASSET_URL', BASE_URL . 'assets/');
-define('PACKAGE_URL', BASE_URL . 'vendor/');
 define('ATTACHMENT_PATH', '');
 define('IMAGE_PATH', '');
 define('BUCKET_URL', getenv('BUCKET_URL'));
@@ -122,11 +121,9 @@ define('CONTROLLER_PATH','controllers/');
 
 // CORE THEME SETTINGS
 define('THEME_PATH', APP_THEME .'/');
-define('THEME_ASSETS', BASE_URL . VIEWS_PATH .'/'. THEME_PATH .'assets/');
 
 // ADMIN THEME SETTINGS
 define('ADMIN_THEME', 'admin/');
-define('ADMIN_ASSETS', BASE_URL . VIEWS_PATH .'/'. ADMIN_THEME . 'assets/');
 
 // REDBEAN ORM CONFIG
 R::setup("mysql:host=".DB_HOST.";dbname=".DB_NAME, DB_USER, DB_PASS);

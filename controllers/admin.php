@@ -9,6 +9,7 @@
  * Admin
  * Jobskee admin panel
  */
+use RedBean_Facade as R;
 
 define('ADMIN_MANAGE', ADMIN_URL . 'manage');
 

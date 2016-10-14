@@ -1,5 +1,4 @@
 <?php
-require 'vendor/autoload.php';
 /**
  * Jobskee - open source job board
  *
@@ -12,6 +11,8 @@ require 'vendor/autoload.php';
  * Load the configuration file
  */
 require 'config.php';
+
+use RedBean_Facade as R;
 
 /*
  * Load category and city values

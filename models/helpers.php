@@ -1,13 +1,15 @@
 <?php
 /**
- * Jobskee - open source job board 
+ * Jobskee - open source job board
  *
  * @author      Elinore Tenorio <elinore.tenorio@gmail.com>
  * @license     MIT
  * @url         http://www.jobskee.com
- * 
+ *
  * A list of generic functions used around Jobskee
  */
+
+use RedBean_Facade as R;
 
 function isValidImageExt($image) {
     $ext = array('jpg', 'JPG', 'jpeg', 'JPEG', 'png', 'PNG', 'gif', 'GIF');

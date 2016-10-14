@@ -8,10 +8,8 @@
     <!-- Bootstrap -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="<?php _e(PACKAGE_URL); ?>twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?php _e(PACKAGE_URL); ?>twbs/bootstrap/dist/css//bootstrap-theme.min.css" rel="stylesheet">
-    <link href="<?php _e(ADMIN_ASSETS); ?>css/theme.css" rel="stylesheet">
-    <link rel="shortcut icon" href="<?php _e(ADMIN_ASSETS);; ?>ico/favicon.png">
+    <link href="/assets/app.css" rel="stylesheet">
+    <link rel="shortcut icon" href="/assets/ico/favicon.png">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -19,11 +17,6 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
-    
-    <?php if (isset($markdown)): ?>
-        <link href="<?php _e(PACKAGE_URL); ?>npm-asset/bootstrap-markdown/css/bootstrap-markdown.min.css" rel="stylesheet">
-    <?php endif; ?>
-        
   </head>
   <body>
     <!-- Fixed navbar -->
@@ -45,15 +38,15 @@
                 <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $lang->t('link|categories'); ?> <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                  <?php foreach($categories as $cat): ?>  
+                  <?php foreach($categories as $cat): ?>
                   <li><a href="<?php _e(ADMIN_URL . "categories/{$cat->id}/{$cat->url}"); ?>"><?php _e($cat->name); ?></a></li>
                   <?php endforeach; ?>
-                </ul> 
+                </ul>
                 </li>
                 <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $lang->t('link|cities'); ?> <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                  <?php foreach($cities as $cit): ?>  
+                  <?php foreach($cities as $cit): ?>
                   <li><a href="<?php _e(ADMIN_URL . "cities/{$cit->id}/{$cit->url}"); ?>"><?php _e($cit->name); ?></a></li>
                   <?php endforeach; ?>
                 </ul>
@@ -83,4 +76,3 @@
     </div>
 
     <div class="container theme-showcase">
-     

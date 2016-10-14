@@ -11,6 +11,8 @@
  * - this script will migrate categories, cities, jobs and pages
  */
 
+use RedBean_Facade as R;
+
 // DB CONFIG - MODIFY THIS
 $jobberbase = array('db_host' => 'localhost',
 					'db_name' => 'jobberbase',
