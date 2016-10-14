@@ -7,9 +7,11 @@
     <meta name="description" content="<?php _e(APP_DESC); ?>">
     <!-- Bootstrap -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/assets/app.css" rel="stylesheet">
-    <link rel="shortcut icon" href="/assets/ico/favicon.png">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <?php include '../favicon.php'; ?>
+    <link href="/assets/css/app.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
