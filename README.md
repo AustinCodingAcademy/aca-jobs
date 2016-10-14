@@ -29,7 +29,7 @@ Installation
 2. Update admin table with your desired username and password (sha1)
 3. Import the file into SQL database
 4. Copy `.env.example` to `.env` and fill out variables
-5. Change file permission of /assets/images and /assets/attachments to 777
+5. Change file permission of /views/assets/images and /views/assets/attachments to 777
 6. Check that all .htaccess files were uploaded
 7. Install php dependencies with [Composer](https://getcomposer.org/) `composer update`
 8. Install js/css dependencies with [Node](https://nodejs.org/en/) `npm install`

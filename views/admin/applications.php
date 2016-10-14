@@ -25,7 +25,7 @@
         <td><?php _e($apps->email); ?></td>
         <td>
             <?php if ($apps->attachment != ''): ?>
-            <a href="<?php _e("/assets/attachments/{$apps->attachment}"); ?>">Download</a>
+            <a href="<?php _e("/views/assets/attachments/{$apps->attachment}"); ?>">Download</a>
             <?php endif; ?>
         </td>
         <td><?php _e(niceDate($apps->created)); ?></td>

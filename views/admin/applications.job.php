@@ -23,7 +23,7 @@
         <td><?php _e($apps->email); ?></td>
         <td>
             <?php if ($apps->attachment != ''): ?>
-            <a href="<?php _e("/assets/attachments/{$apps->attachment}"); ?>"><?php echo $lang->t('admin|download'); ?></a>
+            <a href="<?php _e("/views/assets/attachments/{$apps->attachment}"); ?>"><?php echo $lang->t('admin|download'); ?></a>
             <?php endif; ?>
         </td>
         <td><?php _e(niceDate($apps->created)); ?></td>

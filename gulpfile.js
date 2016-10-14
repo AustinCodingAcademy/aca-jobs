@@ -14,17 +14,17 @@ var postcss = require('gulp-postcss');
 
 gulp.task('bundle', function () {
   return browserify({
-    entries: ['assets/js/app.js'],
+    entries: ['views/assets/js/app.js'],
   }).bundle()
     .pipe(source('bundle.js'))
     .pipe(buffer())
     .pipe(uglify())
-    .pipe(gulp.dest('assets/js/'));
+    .pipe(gulp.dest('views/assets/js/'));
 });
 
 gulp.task('bundle-dev', function() {
   return browserify({
-    entries: ['assets/js/app.js'],
+    entries: ['views/assets/js/app.js'],
     debug: true
   }).bundle()
     .on('error', function(error) {
@@ -35,22 +35,22 @@ gulp.task('bundle-dev', function() {
     .pipe(buffer())
     .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('assets/js/'));
+    .pipe(gulp.dest('views/assets/js/'));
 });
 
 gulp.task('sass', function () {
-  return gulp.src('assets/scss/app.scss')
+  return gulp.src('views/assets/scss/app.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss([pixrem]))
     .pipe(autoprefixer({
       browsers: ['> 5%', 'last 2 versions']
     }))
     .pipe(cssnano())
-    .pipe(gulp.dest('assets/'));
+    .pipe(gulp.dest('views/assets/'));
 });
 
 gulp.task('sass-dev', function () {
-  return gulp.src('assets/scss/app.scss')
+  return gulp.src('views/assets/scss/app.scss')
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss([pixrem]))
@@ -58,12 +58,12 @@ gulp.task('sass-dev', function () {
       browsers: ['> 5%', 'last 2 versions']
     }))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('assets/css/'));
+    .pipe(gulp.dest('views/assets/css/'));
 });
 
 gulp.task('watch', function () {
-  gulp.watch('assets/js/!(bundle)**', ['bundle-dev']);
-  gulp.watch('assets/scss/**', ['sass-dev']);
+  gulp.watch('views/assets/js/!(bundle)**', ['bundle-dev']);
+  gulp.watch('views/assets/scss/**', ['sass-dev']);
 });
 
 gulp.task('build', ['bundle', 'sass']);

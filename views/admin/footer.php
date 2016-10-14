@@ -10,6 +10,6 @@
     </div> <!-- /container -->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="/assets/js/bundle.js"></script>
+    <script src="/views/assets/js/bundle.js"></script>
   </body>
 </html>
