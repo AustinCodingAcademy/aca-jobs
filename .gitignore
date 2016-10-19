@@ -4,6 +4,6 @@ vendor
 .env
 components
 node_modules
-views/assets/css/app.css*
-views/assets/js/bundle.js*
+views/assets/css/app*.css*
+views/assets/js/bundle*.js*
 *.log

@@ -13,6 +13,7 @@ var pixrem  = require('pixrem');
 var postcss = require('gulp-postcss');
 var CacheBreaker = require('gulp-cache-breaker');
 var cb = new CacheBreaker();
+var runSequence = require('run-sequence');
 
 gulp.task('bundle', function () {
   return browserify({
@@ -79,6 +80,13 @@ gulp.task('watch', function () {
   gulp.watch('views/assets/scss/**', ['sass-dev']);
 });
 
-gulp.task('build', ['bundle', 'sass', 'symlink-cb-paths']);
+gulp.task('build', function(callback) {
+  if (process.env.APP_MODE === 'production') {
+    runSequence(['bundle', 'sass'], 'symlink-cb-paths', callback);
+  } else {
+    gulp.start('develop');
+  }
+});
+
 gulp.task('default', ['develop', 'watch']);
 gulp.task('develop', ['bundle-dev', 'sass-dev'])
