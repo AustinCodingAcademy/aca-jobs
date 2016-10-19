@@ -11,7 +11,11 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <?php include 'favicon.php'; ?>
-    <link href="/views/assets/css/app.css" rel="stylesheet">
+    <?php if (getenv('APP_MODE') == 'production') { ?>
+      <link href="/views/assets/css/{{cache-break:/app.css}}" rel="stylesheet">
+    <?php } else { ?>
+      <link href="/views/assets/css/app.css" rel="stylesheet">
+    <?php } ?>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

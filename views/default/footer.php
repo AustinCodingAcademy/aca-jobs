@@ -24,7 +24,11 @@
       </div>
     </div>
 
-    <script src="/views/assets/js/bundle.js"></script>
+    <?php if (getenv('APP_MODE') == 'production') { ?>
+      <script src="/views/assets/js/{{cache-break:/bundle.js}}"></script>
+    <?php } else { ?>
+      <script src="/views/assets/js/bundle.js"></script>
+    <?php } ?>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>

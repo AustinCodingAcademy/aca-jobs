@@ -11,6 +11,8 @@ var autoprefixer = require('gulp-autoprefixer');
 var cssnano = require('gulp-cssnano');
 var pixrem  = require('pixrem');
 var postcss = require('gulp-postcss');
+var CacheBreaker = require('gulp-cache-breaker');
+var cb = new CacheBreaker();
 
 gulp.task('bundle', function () {
   return browserify({
@@ -61,11 +63,22 @@ gulp.task('sass-dev', function () {
     .pipe(gulp.dest('views/assets/css/'));
 });
 
+gulp.task('html', function() {
+  return gulp.src('views/**/*.php')
+    .pipe(cb.gulpCbPath('views/assets'))
+    .pipe(gulp.dest('views'));
+});
+
+// Write symlinks for all cache-broken paths from previous tasks.
+gulp.task('symlink-cb-paths', ['html'], function() {
+  cb.symlinkCbPaths();
+});
+
 gulp.task('watch', function () {
   gulp.watch('views/assets/js/!(bundle)**', ['bundle-dev']);
   gulp.watch('views/assets/scss/**', ['sass-dev']);
 });
 
-gulp.task('build', ['bundle', 'sass']);
+gulp.task('build', ['bundle', 'sass', 'symlink-cb-paths']);
 gulp.task('default', ['develop', 'watch']);
 gulp.task('develop', ['bundle-dev', 'sass-dev'])

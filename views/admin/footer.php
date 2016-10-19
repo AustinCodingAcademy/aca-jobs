@@ -9,7 +9,11 @@
 
     </div> <!-- /container -->
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="/views/assets/js/bundle.js"></script>
+    <?php if (getenv('APP_MODE') == 'production') { ?>
+      <script src="/views/assets/js/{{cache-break:/bundle.js}}"></script>
+    <?php } else { ?>
+      <script src="/views/assets/js/bundle.js"></script>
+    <?php } ?>
+
   </body>
 </html>
