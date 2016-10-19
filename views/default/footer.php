@@ -25,7 +25,7 @@
     </div>
 
     <?php if (getenv('APP_MODE') == 'production') { ?>
-      <script src="/views/assets/js/{{cache-break:/bundle.js}}"></script>
+      <script src="/views/assets/{{cache-break:js/bundle.js}}"></script>
     <?php } else { ?>
       <script src="/views/assets/js/bundle.js"></script>
     <?php } ?>

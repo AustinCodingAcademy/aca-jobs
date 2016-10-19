@@ -27,7 +27,7 @@
     <link rel="canonical" href="<?php _e($seo_url); ?>" />
     <link rel="shortlink" href="<?php _e($seo_url); ?>" />
     <?php if (getenv('APP_MODE') == 'production') { ?>
-      <link href="/views/assets/css/{{cache-break:/app.css}}" rel="stylesheet">
+      <link href="/views/assets/{{cache-break:css/app.css}}" rel="stylesheet">
     <?php } else { ?>
       <link href="/views/assets/css/app.css" rel="stylesheet">
     <?php } ?>
