@@ -11,6 +11,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <?php include 'favicon.php'; ?>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
     <?php if (getenv('APP_MODE') == 'production') { ?>
       <link href="/views/assets/{{cache-break:css/app.css}}" rel="stylesheet">
     <?php } else { ?>
@@ -35,10 +36,10 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="<?php _e(BASE_URL); ?>"><?php _e(APP_NAME); ?></a>
+          <a class="navbar-brand" href="<?php _e(BASE_URL); ?>"><img src="/views/assets/images/White_ACA_standard_horizontal.png" /></a>
         </div>
         <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
+          <ul class="nav navbar-nav navbar-right">
             <?php if (userIsValid()): ?>
                <li><a href="<?php _e(ADMIN_URL); ?>manage"><?php echo $lang->t('link|home'); ?></a></li>
                 <li class="dropdown">

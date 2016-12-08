@@ -26,6 +26,7 @@
 
     <link rel="canonical" href="<?php _e($seo_url); ?>" />
     <link rel="shortlink" href="<?php _e($seo_url); ?>" />
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
     <?php if (getenv('APP_MODE') == 'production') { ?>
       <link href="/views/assets/{{cache-break:css/app.css}}" rel="stylesheet">
     <?php } else { ?>
@@ -43,10 +44,10 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="<?php _e(BASE_URL); ?>"><?php _e(APP_NAME); ?></a>
+          <a class="navbar-brand" href="<?php _e(BASE_URL); ?>"><img src="/views/assets/images/White_ACA_standard_horizontal.png" /></a>
         </div>
         <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
+          <ul class="nav navbar-nav navbar-right">
             <li class="active"><a href="<?php _e(BASE_URL); ?>"><?php echo $lang->t('link|home'); ?></a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $lang->t('link|categories'); ?> <b class="caret"></b></a>

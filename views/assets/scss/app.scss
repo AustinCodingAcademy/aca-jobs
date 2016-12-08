@@ -1,5 +1,7 @@
+@import "variables";
 @import "../../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap-sprockets";
 @import "../../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap";
+@import "../../../node_modules/bootswatch/journal/_bootswatch";
 @import "../../../node_modules/bootstrap-markdown/css/bootstrap-markdown.min";
 @import "./pygments-manni";
 @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
@@ -35,4 +37,16 @@ body {
 
 .job-rss {
   background-color: #ff6600 !important;
+}
+
+.label {
+  font-size: 66%;
+  margin: 2px;
+}
+
+.navbar-brand {
+  padding: 8px;
+  img {
+    height: 100%;
+  }
 }
