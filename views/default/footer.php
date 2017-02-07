@@ -49,7 +49,7 @@
         })();
     </script>
     <?php endif; ?>
-    <? if(!array_intersect(explode('/', "$_SERVER[REQUEST_URI]"), ['jobs', 'admin', '5-jobs', 'giving-back'])): ?>
+    <? if(!array_intersect(explode('/', "$_SERVER[REQUEST_URI]"), ['contact', 'jobs', 'about', 'admin', '5-jobs', 'giving-back'])): ?>
       <?php include 'jobs2careers.php'; ?>
       <?php include 'facebook.php'; ?>
     <?php endif; ?>

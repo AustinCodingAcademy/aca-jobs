@@ -4,21 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "571b29aa9d6db71a522837d84d40778b",
     "content-hash": "71ddf315539c357848a68ac9dc8935e3",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.19.15",
+            "version": "3.21.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "83e9522a0a1abce0b1a0c2971428a5bd975a212d"
+                "reference": "b51512a4ad4aa080ab963942a1e234265771fcde"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/83e9522a0a1abce0b1a0c2971428a5bd975a212d",
-                "reference": "83e9522a0a1abce0b1a0c2971428a5bd975a212d",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/b51512a4ad4aa080ab963942a1e234265771fcde",
+                "reference": "b51512a4ad4aa080ab963942a1e234265771fcde",
                 "shasum": ""
             },
             "require": {
@@ -85,20 +84,20 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2016-10-13 18:56:16"
+            "time": "2017-01-27T00:34:55+00:00"
         },
         {
             "name": "facebook/graph-sdk",
-            "version": "5.4.0",
+            "version": "5.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facebook/php-graph-sdk.git",
-                "reference": "c69c3c0bb304ec1fe9400b4bc47ab641c9002eee"
+                "reference": "5d0c4865e80e231d48a4571841bd018828fe58e1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facebook/php-graph-sdk/zipball/c69c3c0bb304ec1fe9400b4bc47ab641c9002eee",
-                "reference": "c69c3c0bb304ec1fe9400b4bc47ab641c9002eee",
+                "url": "https://api.github.com/repos/facebook/php-graph-sdk/zipball/5d0c4865e80e231d48a4571841bd018828fe58e1",
+                "reference": "5d0c4865e80e231d48a4571841bd018828fe58e1",
                 "shasum": ""
             },
             "require": {
@@ -110,7 +109,8 @@
                 "phpunit/phpunit": "~4.0"
             },
             "suggest": {
-                "guzzlehttp/guzzle": "Allows for implementation of the Guzzle HTTP client"
+                "guzzlehttp/guzzle": "Allows for implementation of the Guzzle HTTP client",
+                "paragonie/random_compat": "Provides a better CSPRNG option in PHP 5"
             },
             "type": "library",
             "extra": {
@@ -142,7 +142,7 @@
                 "facebook",
                 "sdk"
             ],
-            "time": "2016-10-12 18:53:27"
+            "time": "2017-01-19T15:42:20+00:00"
         },
         {
             "name": "gabordemooij/redbean",
@@ -185,7 +185,7 @@
                 "Object Relational Mapping",
                 "orm"
             ],
-            "time": "2013-10-30 22:13:02"
+            "time": "2013-10-30T22:13:02+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -247,32 +247,32 @@
                 "rest",
                 "web service"
             ],
-            "time": "2016-10-08 15:01:37"
+            "time": "2016-10-08T15:01:37+00:00"
         },
         {
             "name": "guzzlehttp/promises",
-            "version": "1.2.0",
+            "version": "v1.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/promises.git",
-                "reference": "c10d860e2a9595f8883527fa0021c7da9e65f579"
+                "reference": "a59da6cf61d80060647ff4d3eb2c03a2bc694646"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/promises/zipball/c10d860e2a9595f8883527fa0021c7da9e65f579",
-                "reference": "c10d860e2a9595f8883527fa0021c7da9e65f579",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/a59da6cf61d80060647ff4d3eb2c03a2bc694646",
+                "reference": "a59da6cf61d80060647ff4d3eb2c03a2bc694646",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.5.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.0"
+                "phpunit/phpunit": "^4.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0-dev"
+                    "dev-master": "1.4-dev"
                 }
             },
             "autoload": {
@@ -298,7 +298,7 @@
             "keywords": [
                 "promise"
             ],
-            "time": "2016-05-18 16:56:05"
+            "time": "2016-12-20T10:07:11+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
@@ -356,20 +356,20 @@
                 "stream",
                 "uri"
             ],
-            "time": "2016-06-24 23:00:38"
+            "time": "2016-06-24T23:00:38+00:00"
         },
         {
             "name": "mtdowling/jmespath.php",
-            "version": "2.3.0",
+            "version": "2.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jmespath/jmespath.php.git",
-                "reference": "192f93e43c2c97acde7694993ab171b3de284093"
+                "reference": "adcc9531682cf87dfda21e1fd5d0e7a41d292fac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jmespath/jmespath.php/zipball/192f93e43c2c97acde7694993ab171b3de284093",
-                "reference": "192f93e43c2c97acde7694993ab171b3de284093",
+                "url": "https://api.github.com/repos/jmespath/jmespath.php/zipball/adcc9531682cf87dfda21e1fd5d0e7a41d292fac",
+                "reference": "adcc9531682cf87dfda21e1fd5d0e7a41d292fac",
                 "shasum": ""
             },
             "require": {
@@ -411,7 +411,7 @@
                 "json",
                 "jsonpath"
             ],
-            "time": "2016-01-05 18:25:05"
+            "time": "2016-12-03T22:08:25+00:00"
         },
         {
             "name": "psr/http-message",
@@ -461,7 +461,7 @@
                 "request",
                 "response"
             ],
-            "time": "2016-08-06 14:39:51"
+            "time": "2016-08-06T14:39:51+00:00"
         },
         {
             "name": "slim/extras",
@@ -512,27 +512,28 @@
                 "middleware",
                 "templating"
             ],
-            "time": "2013-01-07 17:56:10"
+            "time": "2013-01-07T17:56:10+00:00"
         },
         {
             "name": "slim/slim",
-            "version": "2.6.2",
+            "version": "2.6.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/slimphp/Slim.git",
-                "reference": "20a02782f76830b67ae56a5c08eb1f563c351a37"
+                "reference": "9224ed81ac1c412881e8d762755e3d76ebf580c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/slimphp/Slim/zipball/20a02782f76830b67ae56a5c08eb1f563c351a37",
-                "reference": "20a02782f76830b67ae56a5c08eb1f563c351a37",
+                "url": "https://api.github.com/repos/slimphp/Slim/zipball/9224ed81ac1c412881e8d762755e3d76ebf580c0",
+                "reference": "9224ed81ac1c412881e8d762755e3d76ebf580c0",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0"
             },
             "suggest": {
-                "ext-mcrypt": "Required for HTTP cookie encryption"
+                "ext-mcrypt": "Required for HTTP cookie encryption",
+                "phpseclib/mcrypt_compat": "Polyfil for mcrypt extension"
             },
             "type": "library",
             "autoload": {
@@ -558,7 +559,7 @@
                 "rest",
                 "router"
             ],
-            "time": "2015-03-08 18:41:17"
+            "time": "2017-01-07T12:21:41+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -608,7 +609,7 @@
                 "env",
                 "environment"
             ],
-            "time": "2016-09-01 10:05:43"
+            "time": "2016-09-01T10:05:43+00:00"
         }
     ],
     "packages-dev": [],
